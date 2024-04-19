@@ -24,6 +24,26 @@ export default function Products() {
     }
   };
 
+  const sendTotalToServer = async () => {
+    // Send data to backend
+    const data = {
+      items: items,
+      totalPrice: totalPrice
+    };
+
+    const response = await fetch('/api/sendToTelegram', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    });
+
+    if (!response.ok) {
+      console.error('Failed to send data to Telegram');
+    }
+  };
+
   useEffect(() => {
     const buttons = Array.from(document.querySelectorAll('.btn'));
     buttons.forEach(button => {
@@ -126,7 +146,7 @@ export default function Products() {
         </div>
 
         {totalPrice > 0 && (
-            <button className="total-button">
+            <button className="total-button" onClick={sendTotalToServer}>
               Total a pagar: {totalPrice}
             </button>
         )}

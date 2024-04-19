@@ -60,6 +60,23 @@ body {
     background: lightgreen;
 }
 
+.total-button {
+    padding: 10px 10px;
+    border: none;
+    background: #02cab3;
+    border-radius: 10px;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin: 20px auto;
+    display: block;
+    transition: background .2s linear;
+}
+
+.total-button:hover {
+    background: lightgreen;
+}
+
 .added-to-cart {
     display: inline-block;
     padding: 10px 10px;

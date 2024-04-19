@@ -163,7 +163,7 @@ export default function Products() {
 
         {totalPrice > 0 && (
             <button className="total-button" onClick={sendTotalToServer}>
-              Total a pagar: {totalPrice}
+              Pagar el Total de: {totalPrice}
             </button>
         )}
 

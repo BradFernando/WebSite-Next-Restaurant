@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 
 export default function Products() {
   const [items, setItems] = useState([]);
+  const [totalPrice, setTotalPrice] = useState(0);
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const toggleItem = (btn, itemId, price) => {
@@ -11,11 +12,13 @@ export default function Products() {
     if (!item) {
         let newItem = { id: itemId, price: price};
         setItems([...items, newItem]);
+        setTotalPrice(totalPrice + price);
         btn.classList.add('added-to-cart');
         btn.innerText = "Eliminar del carrito";
     } else {
         let newItems = items.filter(i => i.id !== itemId);
         setItems(newItems);
+        setTotalPrice(totalPrice - price);
         btn.classList.remove('added-to-cart');
         btn.innerText = "Añadir al carrito";
     }
@@ -121,6 +124,12 @@ export default function Products() {
             </div>
           </div>
         </div>
+
+        {totalPrice > 0 && (
+            <button className="total-button">
+              Total a pagar: {totalPrice}
+            </button>
+        )}
 
       </div>
   );

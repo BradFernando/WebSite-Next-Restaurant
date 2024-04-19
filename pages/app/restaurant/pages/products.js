@@ -24,6 +24,19 @@ export default function Products() {
     }
   };
 
+  const resetCart = () => {
+    // Reinicia el estado de los items y el precio total
+    setItems([]);
+    setTotalPrice(0);
+
+    // Reinicia el texto de los botones
+    const buttons = Array.from(document.querySelectorAll('.btn'));
+    buttons.forEach(button => {
+      button.classList.remove('added-to-cart');
+      button.innerText = "Añadir al carrito";
+    });
+  };
+
   const sendTotalToServer = async () => {
     // Send data to backend
     const data = {
@@ -42,6 +55,9 @@ export default function Products() {
     if (!response.ok) {
       console.error('Failed to send data to Telegram');
     }
+
+    // Reinicia el carrito después de enviar los datos
+    resetCart();
   };
 
   useEffect(() => {

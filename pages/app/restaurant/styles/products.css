@@ -61,10 +61,6 @@ body {
 }
 
 .total-button {
-    position: fixed; /* Posiciona el botón de manera fija en la pantalla */
-    bottom: 0; /* Alinea el botón con la parte inferior de la pantalla */
-    left: 0; /* Alinea el botón con el lado izquierdo de la pantalla */
-    width: 100%; /* Hace que el botón ocupe todo el ancho de la pantalla */
     padding: 10px 10px;
     border: none;
     background: #02cab3;
@@ -72,7 +68,8 @@ body {
     color: #fff;
     text-transform: uppercase;
     font-weight: 700;
-    z-index: 100; /* Asegura que el botón se muestre por encima de otros elementos */
+    margin: 20px auto;
+    display: block;
     transition: background .2s linear;
 }
 

@@ -162,10 +162,10 @@ export default function Products() {
         </div>
 
         {totalPrice > 0 && (
-        <button className="total-button" onClick={sendTotalToServer}>
-          Pagar el Total de: {totalPrice}
-        </button>
-    )}
+            <button className="total-button" onClick={sendTotalToServer}>
+              Pagar el Total de: {totalPrice}
+            </button>
+        )}
 
       </div>
   );

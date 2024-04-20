@@ -6,7 +6,7 @@ export default async function handler(req, res) {
     // Aquí es donde enviarías los datos a tu servidor Python
     const data = req.body;
 
-    const response = await fetch('http://bradfer7.pythonanywhere.com/api/receiveData', { // reemplaza esto con la URL de tu servidor Python
+    const response = await fetch('http://localhost:5000/api/receiveData', { // reemplaza esto con la URL de tu servidor Python
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

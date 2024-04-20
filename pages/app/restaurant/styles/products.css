@@ -61,15 +61,18 @@ body {
 }
 
 .total-button {
-    padding: 10px 10px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 10px; /* Aumenta el primer valor para hacer el botón más alto */
     border: none;
     background: #02cab3;
     border-radius: 10px;
     color: #fff;
     text-transform: uppercase;
     font-weight: 700;
-    margin: 20px auto;
-    display: block;
+    z-index: 100;
     transition: background .2s linear;
 }
 
